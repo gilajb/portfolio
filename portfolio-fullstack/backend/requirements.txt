@@ -3,11 +3,11 @@ Django==4.2.13
 djangorestframework==3.15.1
 django-cors-headers==4.3.1
 
-# Database
-psycopg2-binary==2.9.9
+# Database (psycopg v3 — better cross-version compatibility than psycopg2-binary)
+psycopg[binary]==3.2.3
 dj-database-url==2.2.0
 
-# Static files (Render needs this — no separate static file server)
+# Static files
 whitenoise==6.7.0
 
 # Production server
