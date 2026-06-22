@@ -3,14 +3,15 @@ Django==4.2.13
 djangorestframework==3.15.1
 django-cors-headers==4.3.1
 
+# Database
+psycopg2-binary==2.9.9
+dj-database-url==2.2.0
+
+# Static files (Render needs this — no separate static file server)
+whitenoise==6.7.0
+
 # Production server
 gunicorn==22.0.0
 
-# PostgreSQL driver (uncomment when switching from SQLite)
-# psycopg2-binary==2.9.9
-
 # Environment variable management
 python-dotenv==1.0.1
-
-# Email (optional: use SendGrid)
-# sendgrid==6.11.0
