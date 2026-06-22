@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JOY CHEPKORIR BETT | Building Digital Arks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&amp;family=Literata:wght@600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ffb4ab",
+                      "surface-tint": "#c8c6c5",
+                      "tertiary-fixed": "#ffe088",
+                      "on-background": "#e5e2e1",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-container": "#201f1f",
+                      "on-secondary-container": "#b7b5b0",
+                      "outline-variant": "#444748",
+                      "tertiary": "#e9c349",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-dim": "#141313",
+                      "on-secondary-fixed-variant": "#474743",
+                      "on-primary-fixed": "#1c1b1b",
+                      "on-error-container": "#ffdad6",
+                      "inverse-on-surface": "#313030",
+                      "primary": "#c8c6c5",
+                      "on-secondary-fixed": "#1c1c18",
+                      "on-tertiary-container": "#4f3e00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "secondary-container": "#474743",
+                      "tertiary-container": "#cca730",
+                      "inverse-primary": "#5f5e5e",
+                      "on-error": "#690005",
+                      "surface": "#141313",
+                      "on-primary-fixed-variant": "#474746",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-surface-variant": "#c4c7c7",
+                      "inverse-surface": "#e5e2e1",
+                      "on-primary-container": "#848282",
+                      "secondary": "#c9c6c1",
+                      "on-tertiary": "#3c2f00",
+                      "error-container": "#93000a",
+                      "on-primary": "#313030",
+                      "secondary-fixed": "#e5e2dc",
+                      "surface-bright": "#3a3939",
+                      "secondary-fixed-dim": "#c9c6c1",
+                      "primary-fixed": "#e5e2e1",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-tertiary-fixed": "#241a00",
+                      "background": "#141313",
+                      "surface-variant": "#353434",
+                      "primary-container": "#1a1a1a",
+                      "outline": "#8e9192",
+                      "surface-container-highest": "#353434",
+                      "surface-container-high": "#2b2a2a",
+                      "on-secondary": "#31312d",
+                      "on-surface": "#e5e2e1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "40px",
+                      "stack-sm": "16px",
+                      "margin-mobile": "24px",
+                      "container-max": "1440px",
+                      "margin-desktop": "80px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "stack-xl": "120px",
+                      "stack-lg": "80px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Hanken Grotesk"],
+                      "label-caps": ["JetBrains Mono"],
+                      "headline-lg": ["Literata"],
+                      "body-md": ["Hanken Grotesk"],
+                      "code-sm": ["JetBrains Mono"],
+                      "display-xl-mobile": ["Literata"],
+                      "display-xl": ["Literata"],
+                      "title-md": ["Hanken Grotesk"],
+                      "headline-lg-mobile": ["Literata"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "code-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "display-xl-mobile": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-xl": ["80px", {"lineHeight": "92px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "title-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        /* Ambient Animated Gradient */
+        .ambient-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(200, 198, 197, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(233, 195, 73, 0.05) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(200, 198, 197, 0.05) 0%, transparent 40%);
+            z-index: 0;
+            pointer-events: none;
+            background-size: 200% 200%;
+            animation: ambientMove 20s ease-infinite alternate;
+        }
+
+        @keyframes ambientMove {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 100%; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ambient-gradient, .reveal-element, .project-card, .btn-premium {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+            }
+        }
+
+        .architectural-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+
+        .cursor-glow {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(233, 195, 73, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            position: fixed;
+            z-index: 10;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .cursor-glow.active {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(233, 195, 73, 0.12) 0%, transparent 70%);
+        }
+
+        /* Scroll Trigger Styles */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Premium Hover Effects */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1;
+        }
+
+        .btn-premium::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(233, 195, 73, 0.1);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(233, 195, 73, 0.3);
+        }
+
+        .btn-premium:hover::after {
+            opacity: 1;
+        }
+
+        .project-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(68, 71, 72, 0.3);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: rgba(233, 195, 73, 0.4);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        .mask-radial {
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-tertiary selection:text-on-tertiary">
+<div class="cursor-glow hidden md:block" id="glow"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-20 py-6 max-w-container-max mx-auto bg-surface/10 glass-nav border-b border-outline-variant/20">
+<div class="font-label-caps text-label-caps font-bold tracking-widest text-on-surface">JOY CHEPKORIR BETT</div>
+<nav class="hidden md:flex gap-10">
+<a class="font-label-caps text-label-caps text-tertiary border-b-2 border-tertiary pb-1" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="btn-premium bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 hover:bg-tertiary transition-all duration-300 active:scale-95">Work With Me</button>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 px-6 md:px-20 architectural-grid overflow-hidden">
+<div class="ambient-gradient"></div>
+<div class="max-w-4xl relative z-10 reveal-element">
+<span class="font-label-caps text-label-caps text-tertiary tracking-[0.3em] mb-6 block">ENGINEER × VISIONARY</span>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface mb-8 leading-tight">
+                Building Digital Arks for a <span class="italic font-headline-lg">Greater Future</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
+                Crafting high-performance digital infrastructures that blend timeless architectural principles with cutting-edge silicon precision.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="btn-premium bg-primary text-on-primary font-label-caps text-label-caps px-10 py-5 hover:bg-tertiary transition-all duration-300 flex items-center gap-3 group">
+                    View Projects
+                    <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">arrow_outward</span>
+</button>
+<button class="btn-premium border border-outline text-on-surface font-label-caps text-label-caps px-10 py-5 hover:bg-on-surface/5 transition-all duration-300">
+                    Work With Me
+                </button>
+</div>
+</div>
+<!-- Hero Background Decor -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden lg:block overflow-hidden opacity-40 reveal-element" style="transition-delay: 0.2s;">
+<img class="w-full h-full object-cover filter grayscale contrast-125 hover:scale-105 transition-transform duration-[2s]" data-alt="Futuristic architectural visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADPOhnv689BuBDPuzxovmYh73U22M_6xt8WNhlwUKmjzzvjBvkVZiCJ346Iy5oLHk4YK-kfpeUMM3rqnyOJhiSvJ_RBj0q8COSHiPEtVswRF5gXKezdjYsP8jFv0x13or4qDSZl2Mz-cshO2NFmxO_eme-8rXWyzywHC9pgHfKqB-zzgC8yggPXaSpfCYLEMgHgnqxanim7-FWhRFjZKQ22IvNV4LyDR8XCI2VlpnLJzigRf4VIfjJ3JPbmPIzu3lSpKc0pvTSvJQ"/>
+</div>
+</section>
+<!-- Impact Metrics -->
+<section class="py-stack-xl px-6 md:px-20 border-y border-outline-variant/10 bg-surface-container-lowest">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="flex flex-col gap-2 reveal-element" style="transition-delay: 0.1s;">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SUCCESSFUL DEPLOYMENTS</span>
+<span class="font-display-xl-mobile text-display-xl-mobile text-primary">124+</span>
+</div>
+<div class="flex flex-col gap-2 reveal-element" style="transition-delay: 0.2s;">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ENGINEERING LEADERSHIP</span>
+<span class="font-display-xl-mobile text-display-xl-mobile text-tertiary">08<span class="text-headline-lg">yrs</span></span>
+</div>
+<div class="flex flex-col gap-2 reveal-element" style="transition-delay: 0.3s;">
+<span class="font-label-caps text-label-caps text-on-surface-variant">OPTIMIZATION RATIO</span>
+<span class="font-display-xl-mobile text-display-xl-mobile text-primary">40<span class="text-headline-lg">%</span></span>
+</div>
+<div class="flex flex-col gap-2 reveal-element" style="transition-delay: 0.4s;">
+<span class="font-label-caps text-label-caps text-on-surface-variant">PATENTS PENDING</span>
+<span class="font-display-xl-mobile text-display-xl-mobile text-tertiary">03</span>
+</div>
+</div>
+</section>
+<!-- Featured Projects (Bento Grid) -->
+<section class="py-stack-xl px-6 md:px-20">
+<div class="flex justify-between items-end mb-16 reveal-element">
+<div>
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block">PORTFOLIO</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Curated Standouts</h2>
+</div>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-all flex items-center gap-2 group" href="#">
+                ALL WORKS <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-2">trending_flat</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto md:h-[800px]">
+<!-- Project 1 -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container project-card reveal-element" style="transition-delay: 0.1s;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105 opacity-60" data-alt="Server architecture visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ8s2VLTzNKRqmND1Ml9pwQ3Q0CnY8bJtWcvC0UGG3kldJQ-qqaxtZl-mWuXBmInsB7Z3e7f32CaqG0EuuQEZb_oK0T5isPzICjNIXzJmxIM_h_7iuvfTUXX94cD-kBzUDOZxxGZ49JZ7bZG6ac_ECycAoIJHv2kGd3eP2pxouvELgwudnfVC1Bt0Y4raxqZ0itvrSv3MSHUS0OfBrJFuBfzX_tfNsXrZyEXVC7-vcw_ZYZlUSgTqc9CHhwL0onFHQEsKKzUaXVAM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 md:p-12 w-full z-10">
+<span class="font-label-caps text-label-caps text-tertiary mb-2 block">CYBERSECURITY ARK</span>
+<h3 class="font-title-md text-title-md mb-4 text-on-surface group-hover:text-tertiary transition-colors">Neural Defense Protocol v2.0</h3>
+<p class="font-body-md text-on-surface-variant max-w-lg mb-6">Implementing a revolutionary zero-trust architecture for global supply chain logistics.</p>
+<div class="flex gap-3">
+<span class="font-code-sm text-code-sm bg-surface-variant px-3 py-1 text-on-surface-variant">RUST</span>
+<span class="font-code-sm text-code-sm bg-surface-variant px-3 py-1 text-on-surface-variant">K8S</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container-high project-card reveal-element" style="transition-delay: 0.3s;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105 opacity-40" data-alt="Planetary data network visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsvctiN5VqOCvFrAAvzmKfh59s8RfuoaIitSQiAxznzictKuFA-Q7cbNq8CYHK_EUC29AkVOAsQu0tamKSHRwpgZoLjthcngl3lWZ06vsUPDL6yXE4SF_EF5k0mDYbp4X-gWN5_-pi4TvDm7WuN-r4O2my3K88qNoP7a59gOKgJkETZVd7gwS-SUyRPm2i5ED7yoAbTWZe-wLKSC1ictmf-OSW4vfH7pQ5QQP_xQNnQRRxn0s1bQhAI4TgjGuf7QKbRzOtB2Ps_hQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 z-10">
+<span class="font-label-caps text-label-caps text-tertiary mb-2 block">AI ENGINE</span>
+<h3 class="font-title-md text-title-md mb-4 text-on-surface group-hover:text-tertiary transition-colors">Ethos Cognitive Core</h3>
+<p class="font-body-md text-on-surface-variant mb-6">A human-centric AI model for ethical decision making in enterprise automation.</p>
+<div class="flex gap-3">
+<span class="font-code-sm text-code-sm bg-surface-variant px-3 py-1 text-on-surface-variant">PYTORCH</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="md:col-span-12 group relative overflow-hidden bg-surface-container-low project-card min-h-[400px] reveal-element" style="transition-delay: 0.1s;">
+<div class="absolute inset-0 architectural-grid opacity-20"></div>
+<div class="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between h-full">
+<div class="max-w-xl">
+<span class="font-label-caps text-label-caps text-tertiary mb-2 block">CLOUD INFRASTRUCTURE</span>
+<h3 class="font-title-md text-title-md mb-4 text-on-surface group-hover:text-tertiary transition-colors">Silver Lining Mesh</h3>
+<p class="font-body-md text-on-surface-variant mb-8">Reducing latency by 40% across decentralized edge computing nodes using proprietary packet routing.</p>
+<button class="btn-premium border border-tertiary text-tertiary font-label-caps text-label-caps px-8 py-3 hover:bg-tertiary hover:text-on-tertiary transition-all">DEEP DIVE</button>
+</div>
+<div class="hidden md:block w-1/2 overflow-hidden">
+<img class="w-full grayscale opacity-50 mask-radial transition-transform duration-[2s] group-hover:scale-105 group-hover:grayscale-0" data-alt="Modern data center interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkxu0rDgFdAobn4-fiD8QM-DnhcFllWH8SNqbyRul31_fF-3KI-vXIB8Vg7QjMZOZRC0euifl5sYIOXER6tMN89BRiI6Xk0Y5GFK_eLJy01xwxNjtS9izrOghCcLSFsAlEipur5Pm9tLSfYGywcdlqWA-BgsEktOX41j-goHZ--v-lrXFVPyJSxt9aOdN-ihTnRGzV7FAEZ6yTKN1NuZjApckScRa26HbiytMCNwjhOxVtPJv2DdSpqWbPYACK3luiA2A3tpjUydw"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Preview (Editorial) -->
+<section class="py-stack-xl px-6 md:px-20 bg-surface-container-lowest">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 reveal-element">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">Technical Arsenal</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">A multi-disciplinary stack designed for resilience, scalability, and performance.</p>
+<div class="h-1 w-20 bg-tertiary transition-all duration-500 hover:w-32"></div>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+<div class="reveal-element" style="transition-delay: 0.1s;">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block">01 / ARCHITECTURE</span>
+<ul class="space-y-4 font-body-lg text-body-lg">
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>Cloud Native (AWS/GCP)</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>Microservices Mesh</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>Serverless Patterns</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+</ul>
+</div>
+<div class="reveal-element" style="transition-delay: 0.2s;">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block">02 / CORE DEV</span>
+<ul class="space-y-4 font-body-lg text-body-lg">
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>Rust &amp; Go</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>TypeScript / React</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>GraphQL / gRPC</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+</ul>
+</div>
+<div class="reveal-element" style="transition-delay: 0.3s;">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block">03 / DATA SYSTEMS</span>
+<ul class="space-y-4 font-body-lg text-body-lg">
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>PostgreSQL / Redis</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>Apache Kafka</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>TensorFlow Ecosystem</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+</ul>
+</div>
+<div class="reveal-element" style="transition-delay: 0.4s;">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block">04 / STRATEGY</span>
+<ul class="space-y-4 font-body-lg text-body-lg">
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>Technical Roadmap</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>VPE Leadership</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2 hover:border-tertiary/50 transition-colors cursor-default"><span>Product Engineering</span> <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-stack-xl px-6 md:px-20 text-center relative overflow-hidden">
+<div class="ambient-gradient opacity-30"></div>
+<div class="relative z-10 reveal-element">
+<h2 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl mb-12">Let's build the ark.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-16">
+                Currently accepting inquiries for strategic partnerships and high-impact engineering leadership roles.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-8">
+<button class="btn-premium bg-tertiary text-on-tertiary font-label-caps text-label-caps px-12 py-5 hover:scale-105 transition-transform duration-300">
+                    CONTACT JOY
+                </button>
+<div class="flex gap-6 items-center justify-center">
+<a class="text-on-surface hover:text-tertiary transition-all hover:scale-110" href="#"><span class="font-label-caps text-label-caps">LI</span></a>
+<a class="text-on-surface hover:text-tertiary transition-all hover:scale-110" href="#"><span class="font-label-caps text-label-caps">GH</span></a>
+<a class="text-on-surface hover:text-tertiary transition-all hover:scale-110" href="#"><span class="font-label-caps text-label-caps">TW</span></a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-6 md:px-20 py-stack-xl flex flex-col md:flex-row justify-between items-start border-t border-outline-variant bg-surface-container-lowest">
+<div class="mb-10 md:mb-0 reveal-element">
+<div class="font-headline-lg text-headline-lg-mobile text-primary-fixed-dim opacity-50 mb-6">JOY CHEPKORIR BETT</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 JOY CHEPKORIR BETT. BUILDING DIGITAL ARKS.</p>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-6 reveal-element" style="transition-delay: 0.2s;">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">GitHub</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">Privacy</a>
+</div>
+</footer>
+<script>
+    // Cursor Glow Interactivity
+    const glow = document.getElementById('glow');
+    document.addEventListener('mousemove', (e) => {
+        requestAnimationFrame(() => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    });
+
+    // Custom interaction for cards
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            glow.classList.add('active');
+        });
+        card.addEventListener('mouseleave', () => {
+            glow.classList.remove('active');
+        });
+    });
+
+    // Intersection Observer for Reveal Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: stop observing once revealed
+                // revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-element').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // Simple performance check for ambient animation (not needed if CSS only, but good practice)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.ambient-gradient').forEach(el => {
+            el.style.animation = 'none';
+        });
+    }
+</script>
+</body></html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #141313; /* Primary Surface */
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 32px;
+        }
+        .text-glow-gold:hover {
+            text-shadow: 0 0 15px rgba(233, 195, 73, 0.4);
+        }
+
+        /* Ambient Animated Background for Hero */
+        @keyframes ambient-float {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            50% { transform: translate(-30px, 40px) scale(1.1); opacity: 0.5; }
+            100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+        }
+        .ambient-blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(233, 195, 73, 0.08) 0%, rgba(200, 198, 197, 0) 70%);
+            filter: blur(80px);
+            z-index: -1;
+            animation: ambient-float 15s infinite ease-in-out;
+        }
+
+        /* Reveal Animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered Timeline reveal */
+        .timeline-node {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .timeline-node.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .timeline-node-right {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .timeline-node-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Section Transition */
+        section {
+            transition: opacity 0.5s ease;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ffb4ab",
+                      "surface-tint": "#c8c6c5",
+                      "tertiary-fixed": "#ffe088",
+                      "on-background": "#e5e2e1",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-container": "#201f1f",
+                      "on-secondary-container": "#b7b5b0",
+                      "outline-variant": "#444748",
+                      "tertiary": "#e9c349",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-dim": "#141313",
+                      "on-secondary-fixed-variant": "#474743",
+                      "on-primary-fixed": "#1c1b1b",
+                      "on-error-container": "#ffdad6",
+                      "inverse-on-surface": "#313030",
+                      "primary": "#c8c6c5",
+                      "on-secondary-fixed": "#1c1c18",
+                      "on-tertiary-container": "#4f3e00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "secondary-container": "#474743",
+                      "tertiary-container": "#cca730",
+                      "inverse-primary": "#5f5e5e",
+                      "on-error": "#690005",
+                      "surface": "#141313",
+                      "on-primary-fixed-variant": "#474746",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-surface-variant": "#c4c7c7",
+                      "inverse-surface": "#e5e2e1",
+                      "on-primary-container": "#848282",
+                      "secondary": "#c9c6c1",
+                      "on-tertiary": "#3c2f00",
+                      "error-container": "#93000a",
+                      "on-primary": "#313030",
+                      "secondary-fixed": "#e5e2dc",
+                      "surface-bright": "#3a3939",
+                      "secondary-fixed-dim": "#c9c6c1",
+                      "primary-fixed": "#e5e2e1",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-tertiary-fixed": "#241a00",
+                      "background": "#141313",
+                      "surface-variant": "#353434",
+                      "primary-container": "#1a1a1a",
+                      "outline": "#8e9192",
+                      "surface-container-highest": "#353434",
+                      "surface-container-high": "#2b2a2a",
+                      "on-secondary": "#31312d",
+                      "on-surface": "#e5e2e1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "40px",
+                      "stack-sm": "16px",
+                      "margin-mobile": "24px",
+                      "container-max": "1440px",
+                      "margin-desktop": "80px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "stack-xl": "120px",
+                      "stack-lg": "80px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Hanken Grotesk"],
+                      "label-caps": ["JetBrains Mono"],
+                      "headline-lg": ["Literata"],
+                      "body-md": ["Hanken Grotesk"],
+                      "code-sm": ["JetBrains Mono"],
+                      "display-xl-mobile": ["Literata"],
+                      "display-xl": ["Literata"],
+                      "title-md": ["Hanken Grotesk"],
+                      "headline-lg-mobile": ["Literata"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "code-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "display-xl-mobile": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-xl": ["80px", {"lineHeight": "92px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "title-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop py-6 max-w-container-max mx-auto glass-nav border-b border-outline-variant/20 transition-all duration-500">
+<div class="font-label-caps text-label-caps font-bold tracking-widest text-on-surface cursor-pointer hover:text-tertiary transition-colors duration-300">JOY CHEPKORIR BETT</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary hover:-translate-y-0.5 transition-all duration-300" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-tertiary border-b-2 border-tertiary pb-1" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary hover:-translate-y-0.5 transition-all duration-300" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary hover:-translate-y-0.5 transition-all duration-300" href="#">Contact</a>
+<button class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps hover:bg-tertiary hover:shadow-[0_0_20px_rgba(233,195,73,0.4)] hover:scale-105 transition-all duration-500 active:scale-95">Work With Me</button>
+</div>
+<button class="md:hidden text-on-surface material-symbols-outlined hover:text-tertiary transition-colors">menu</button>
+</nav>
+<main class="pt-32 relative">
+<!-- Ambient Hero BG -->
+<div class="ambient-blob top-[10%] left-[-10%]"></div>
+<div class="ambient-blob top-[40%] right-[-5%]" style="animation-delay: -5s; background: radial-gradient(circle, rgba(200, 198, 197, 0.05) 0%, rgba(200, 198, 197, 0) 70%);"></div>
+<!-- Hero Section -->
+<section class="px-6 md:px-margin-desktop mb-stack-xl relative z-10">
+<div class="max-w-container-max mx-auto editorial-grid">
+<div class="col-span-12 md:col-span-7 flex flex-col justify-center animate-[fadeInLeft_1s_ease-out]">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 tracking-[0.2em] inline-block animate-[bounce_3s_infinite]">CRAFTING RESILIENT SYSTEMS</span>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface mb-8 leading-tight">
+                        Bridging <span class="text-tertiary italic hover:not-italic transition-all duration-500 cursor-default">Silicon</span> &amp; <span class="text-primary-fixed-dim">Society</span>.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl opacity-90">
+                        I am a developer, founder, and future computer engineer dedicated to building digital infrastructure that creates tangible social impact. My journey is defined by the intersection of rigorous engineering and empathetic leadership.
+                    </p>
+</div>
+<div class="col-span-12 md:col-span-5 relative mt-12 md:mt-0 overflow-hidden group">
+<div class="aspect-[4/5] bg-surface-container relative overflow-hidden border border-outline-variant/30 transition-transform duration-700 group-hover:scale-[1.02]">
+<img class="w-full h-full object-cover grayscale contrast-125 opacity-90 hover:grayscale-0 transition-all duration-1000" data-alt="A professional, editorial-style portrait of a confident woman leader in a modern, architecturally significant office setting. The lighting is soft and warm, with a sophisticated ivory and charcoal color palette that reflects academic futurism. She is looking directly at the camera with an expression of visionary intent, surrounded by glass and steel textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzP_jgB3p_M5rwr4O7Z8bQje0q5EpU8OcfNLhd0yZRhTBNqMaT7_DvoB-Ipzlo5FrGQTfCvHsBNXF0Ojb7KCGtDTPX4cnmVIJj3PPPUuKM-GGN70JyAMU0UqoL843LGmNB6LPGZDQ2IwrbpdGHkHHGMzUw_4DpbMJx_F7gnyUcNzvayAIu8qd-l4uRCUGGQnxZUkZFnAIr1UCbc8cR5cZiXqhkTdvy1yIR31SzPuN5xaJvoiNaqugm5L0KFmlgSuczLZrtlUBfuR4"/>
+<div class="absolute bottom-4 left-4 font-label-caps text-[10px] text-tertiary bg-background/80 px-2 py-1 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">COORD. 0.342 N / 32.583 E</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission Statement: Mass-Aware Minimalist Break -->
+<section class="bg-surface-container-low py-stack-xl px-6 md:px-margin-desktop border-y border-outline-variant/10 reveal-on-scroll">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-label-caps text-label-caps text-on-primary-container mb-8 tracking-[0.3em]">PROFESSIONAL MISSION</h2>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg leading-snug">
+                    "To engineer digital solutions that serve as <span class="text-tertiary relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-tertiary/30">stable foundations</span> for human progress, ensuring technology acts as a bridge to healthcare and equality."
+                </p>
+</div>
+</section>
+<!-- Timeline: The Journey -->
+<section class="py-stack-xl px-6 md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4 reveal-on-scroll">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Structural Evolution</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant max-w-xs text-right opacity-60">A CHRONOLOGICAL LOG OF GROWTH AND TECHNICAL MILESTONES.</p>
+</div>
+<div class="space-y-12 relative before:content-[''] before:absolute before:left-[11px] before:top-4 before:bottom-4 before:w-[1px] before:bg-outline-variant/30 md:before:left-1/2">
+<!-- 2024 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 group timeline-node">
+<div class="md:w-1/2 md:text-right pr-8 order-2 md:order-1 transition-all duration-500 group-hover:translate-x-[-10px]">
+<h3 class="font-title-md text-title-md text-tertiary mb-2">Founder &amp; Lead Engineer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Spearheading initiatives that combine AI-driven healthcare accessibility with community-centric software design.</p>
+</div>
+<div class="absolute left-0 md:static md:mx-auto w-6 h-6 rounded-full bg-background border-2 border-tertiary z-10 flex items-center justify-center group-hover:scale-150 group-hover:shadow-[0_0_15px_rgba(233,195,73,0.6)] transition-all duration-500">
+<div class="w-2 h-2 bg-tertiary rounded-full"></div>
+</div>
+<div class="md:w-1/2 pl-8 order-3 transition-all duration-500 group-hover:translate-x-[10px]">
+<span class="font-label-caps text-label-caps text-primary">PRESENT — 2024</span>
+</div>
+</div>
+<!-- 2022 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 group timeline-node-right">
+<div class="md:w-1/2 order-3 md:order-1 md:text-right pr-8 transition-all duration-500 group-hover:translate-x-[-10px]">
+<span class="font-label-caps text-label-caps text-primary">2022 — 2023</span>
+</div>
+<div class="absolute left-0 md:static md:mx-auto w-6 h-6 rounded-full bg-background border-2 border-outline z-10 flex items-center justify-center group-hover:border-tertiary group-hover:scale-150 transition-all duration-500">
+<div class="w-2 h-2 bg-outline group-hover:bg-tertiary rounded-full transition-colors duration-300"></div>
+</div>
+<div class="md:w-1/2 pl-8 order-2 transition-all duration-500 group-hover:translate-x-[10px]">
+<h3 class="font-title-md text-title-md text-on-surface mb-2 group-hover:text-tertiary transition-colors">Systems Research &amp; Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep-diving into low-level systems and architectural patterns, laying the groundwork for complex engineering projects.</p>
+</div>
+</div>
+<!-- 2020 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 group timeline-node">
+<div class="md:w-1/2 md:text-right pr-8 order-2 md:order-1 transition-all duration-500 group-hover:translate-x-[-10px]">
+<h3 class="font-title-md text-title-md text-on-surface mb-2 group-hover:text-tertiary transition-colors">The Genesis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Discovering the power of code as a tool for advocacy, starting with small-scale web solutions for local nonprofits.</p>
+</div>
+<div class="absolute left-0 md:static md:mx-auto w-6 h-6 rounded-full bg-background border-2 border-outline z-10 flex items-center justify-center group-hover:border-tertiary group-hover:scale-150 transition-all duration-500">
+<div class="w-2 h-2 bg-outline group-hover:bg-tertiary rounded-full transition-colors duration-300"></div>
+</div>
+<div class="md:w-1/2 pl-8 order-3 transition-all duration-500 group-hover:translate-x-[10px]">
+<span class="font-label-caps text-label-caps text-primary">2020 — ORIGIN</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Bento Grid -->
+<section class="py-stack-xl px-6 md:px-margin-desktop bg-surface-container-lowest reveal-on-scroll">
+<div class="max-w-container-max mx-auto">
+<div class="mb-16">
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest block mb-4 uppercase">Impact Nodes</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg max-w-2xl">Advocacy through intentional design and leadership.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="md:col-span-2 bg-surface p-10 border border-outline-variant/30 flex flex-col justify-between hover:border-tertiary/60 hover:bg-surface-container/30 transition-all duration-500 group">
+<div>
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-tertiary scale-150 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-[1.75]" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+<span class="font-code-sm text-code-sm text-outline group-hover:text-tertiary transition-colors">LN: 01 // SOCIAL</span>
+</div>
+<h3 class="font-title-md text-title-md mb-4 group-hover:text-tertiary transition-colors">Women’s Empowerment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+                                Facilitating workshops and building platforms that lower the barrier to entry for women in tech. Creating mentorship pipelines that bridge the gender gap in engineering.
+                            </p>
+</div>
+<div class="mt-12 flex gap-2">
+<span class="font-label-caps text-[10px] px-3 py-1 border border-outline-variant/50 uppercase group-hover:border-tertiary/40 transition-colors">Leadership</span>
+<span class="font-label-caps text-[10px] px-3 py-1 border border-outline-variant/50 uppercase group-hover:border-tertiary/40 transition-colors">Advocacy</span>
+</div>
+</div>
+<!-- Card 2 (Image) -->
+<div class="md:col-span-1 aspect-square md:aspect-auto bg-surface relative overflow-hidden border border-outline-variant/30 group">
+<img class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 grayscale group-hover:grayscale-0" data-alt="Modern minimalist architectural photography of a skyscraper reflecting the sky. The image has a clean, high-contrast aesthetic with deep shadows and bright ivory surfaces, capturing the essence of engineering precision and visionary scale in a dark mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoAd0Jl3V6QOMgDMaFe4oYBcAb12Q3QopWgsew9-c9luLebRNiQSP7HxFpgp3HlUp9cXo2vzm_kmPyNZ1-qfC7yNwkDr_jwmzGl-U9kd3qXpmET1nbCYGiCJf2OmFcjNc_EGBJzxe1GRb_8xgHfGlcR4TyaErmfSfAiPakUWn6CXxjMYa2RzOy7XvXhiVeIMRpgbZUlGWhH0bZ3qyrZ4AJOcJQiYQEGA03MAmUMufw-bkcLVL5sKboQ7NfMQpiNdm0J347ifKZeQ4"/>
+</div>
+<!-- Card 3 -->
+<div class="md:col-span-1 bg-surface-container-high p-10 border border-outline-variant/30 flex flex-col justify-between hover:border-tertiary/60 transition-all duration-500 group">
+<div>
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-tertiary scale-150 transition-transform duration-500 group-hover:-translate-y-1" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+<span class="font-code-sm text-code-sm text-outline">LN: 02 // HEALTH</span>
+</div>
+<h3 class="font-title-md text-title-md mb-4 group-hover:text-tertiary transition-colors">Healthcare Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Designing systems that streamline patient-provider communication in underserved regions.
+                            </p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="md:col-span-2 bg-primary-container p-10 border border-outline-variant/30 flex flex-col justify-between hover:border-tertiary/60 transition-all duration-500 group">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1">
+<span class="font-code-sm text-code-sm text-on-primary-container mb-4 block">LN: 03 // TECH</span>
+<h3 class="font-title-md text-title-md mb-4 group-hover:text-tertiary transition-colors">Future Computer Engineer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                    Currently specializing in scalable distributed systems and ethical AI implementations. My technical focus is on hardware-software co-design for high-availability environments.
+                                </p>
+</div>
+<div class="w-full md:w-48 aspect-video md:aspect-square bg-surface border border-outline-variant/20 flex items-center justify-center group-hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-tertiary text-5xl animate-[pulse_3s_infinite]">memory</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-xl px-6 md:px-margin-desktop text-center reveal-on-scroll">
+<div class="max-w-3xl mx-auto border-t border-outline-variant/20 pt-stack-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">Let's build the <span class="text-tertiary italic">future ark</span> together.</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary px-12 py-4 font-label-caps text-label-caps hover:bg-tertiary hover:shadow-[0_0_30px_rgba(233,195,73,0.3)] hover:scale-105 transition-all duration-500 active:scale-95">View Selected Projects</button>
+<button class="border border-outline text-on-surface px-12 py-4 font-label-caps text-label-caps hover:bg-surface-container-high hover:border-tertiary hover:text-tertiary transition-all duration-500 active:scale-95">Download CV</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-6 md:px-margin-desktop py-stack-xl flex flex-col md:flex-row justify-between items-start border-t border-outline-variant bg-surface-container-lowest">
+<div class="mb-12 md:mb-0">
+<div class="font-headline-lg text-headline-lg-mobile text-primary-fixed-dim opacity-50 mb-4 transition-opacity hover:opacity-80 cursor-default">JOY BETT</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant tracking-widest">© 2024 JOY CHEPKORIR BETT. BUILDING DIGITAL ARKS.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-4">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">GitHub</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">Privacy</a>
+</div>
+</footer>
+<script>
+        // Subtle Mouse parallax for hero image
+        const heroImg = document.querySelector('section img');
+        if(heroImg) {
+            window.addEventListener('mousemove', (e) => {
+                const moveX = (e.clientX - window.innerWidth / 2) * 0.015;
+                const moveY = (e.clientY - window.innerHeight / 2) * 0.015;
+                heroImg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+            });
+        }
+
+        // Scroll Reveal Implementation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, we can stop observing if we want it to stay
+                    // observer.unobserve(entry.target); 
+                } else {
+                    // Optional: remove to re-trigger on scroll up
+                    // entry.target.classList.remove('active');
+                }
+            });
+        }, observerOptions);
+
+        // Targeted elements for scroll reveal
+        document.querySelectorAll('.reveal-on-scroll, .timeline-node, .timeline-node-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Sticky Navbar effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4', 'bg-surface/80');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.add('py-6');
+                nav.classList.remove('py-4', 'bg-surface/80');
+            }
+        });
+
+        // Active state navigation logic simulation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                document.querySelectorAll('nav a').forEach(l => {
+                    l.classList.remove('text-tertiary', 'border-b-2', 'border-tertiary', 'pb-1');
+                    l.classList.add('text-on-surface-variant');
+                });
+                link.classList.remove('text-on-surface-variant');
+                link.classList.add('text-tertiary', 'border-b-2', 'border-tertiary', 'pb-1');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | JOY CHEPKORIR BETT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ffb4ab",
+                        "surface-tint": "#c8c6c5",
+                        "tertiary-fixed": "#ffe088",
+                        "on-background": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "on-secondary-container": "#b7b5b0",
+                        "outline-variant": "#444748",
+                        "tertiary": "#e9c349",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#141313",
+                        "on-secondary-fixed-variant": "#474743",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#313030",
+                        "primary": "#c8c6c5",
+                        "on-secondary-fixed": "#1c1c18",
+                        "on-tertiary-container": "#4f3e00",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "secondary-container": "#474743",
+                        "tertiary-container": "#cca730",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "surface": "#141313",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface-variant": "#c4c7c7",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-container": "#848282",
+                        "secondary": "#c9c6c1",
+                        "on-tertiary": "#3c2f00",
+                        "error-container": "#93000a",
+                        "on-primary": "#313030",
+                        "secondary-fixed": "#e5e2dc",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed-dim": "#c9c6c1",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed": "#241a00",
+                        "background": "#141313",
+                        "surface-variant": "#353434",
+                        "primary-container": "#1a1a1a",
+                        "outline": "#8e9192",
+                        "surface-container-highest": "#353434",
+                        "surface-container-high": "#2b2a2a",
+                        "on-secondary": "#31312d",
+                        "on-surface": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "40px",
+                        "stack-sm": "16px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "stack-xl": "120px",
+                        "stack-lg": "80px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Literata"],
+                        "body-md": ["Hanken Grotesk"],
+                        "code-sm": ["JetBrains Mono"],
+                        "display-xl-mobile": ["Literata"],
+                        "display-xl": ["Literata"],
+                        "title-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Literata"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "code-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-xl": ["80px", {"lineHeight": "92px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "title-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .project-card {
+            perspective: 1000px;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-card:hover {
+            transform: translateY(-8px) rotateX(2deg) rotateY(1deg);
+            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.5), 0 18px 36px -18px rgba(233, 195, 73, 0.1);
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.08) translateZ(20px);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        @keyframes subtle-float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .float-animation {
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(200, 198, 197, 0.05) 0%, transparent 70%);
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        #ambient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .ambient-orb {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.15;
+            background: #e9c349;
+            border-radius: 50%;
+            transition: all 4s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-20 py-6 max-w-container-max mx-auto bg-surface/10 backdrop-blur-[20px] border-b border-outline-variant/20">
+<div class="font-label-caps text-label-caps font-bold tracking-widest text-on-surface">JOY CHEPKORIR BETT</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">About</a>
+<a class="font-label-caps text-label-caps text-tertiary border-b-2 border-tertiary pb-1" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary px-6 py-3 rounded-full font-label-caps text-label-caps text-on-primary active:scale-95 transition-all duration-200 hover:bg-tertiary">
+        Work With Me
+    </button>
+</nav>
+<main class="pt-[120px] relative overflow-hidden">
+<!-- Ambient Background -->
+<div id="ambient-bg">
+<div class="ambient-orb w-[600px] h-[600px] -top-40 -right-40"></div>
+<div class="ambient-orb w-[400px] h-[400px] bottom-0 -left-20" style="background: #c8c6c5; opacity: 0.05;"></div>
+</div>
+<!-- Hero Section -->
+<section class="px-6 md:px-20 py-stack-xl max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
+<div class="md:col-span-8">
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest block mb-4 animate-pulse">ENGINEERING THE FUTURE</span>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface mb-8">Architectural <span class="text-tertiary italic">Solutions</span> for a Circular Economy.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Bridging high-performance software engineering with sustainable foresight. My work focuses on building resilient digital infrastructures that empower circularity and technical excellence.
+            </p>
+</div>
+<div class="hidden md:block md:col-span-4 self-center">
+<div class="w-24 h-[1px] bg-outline-variant mb-4"></div>
+<div class="font-code-sm text-code-sm text-tertiary">PROJECT_COUNT: 06</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">LOC: 12,400+</div>
+</div>
+</section>
+<!-- Filter Controls -->
+<section class="px-6 md:px-20 pb-stack-md max-w-container-max mx-auto overflow-x-auto no-scrollbar relative z-10">
+<div class="flex items-center gap-4 min-w-max" id="filter-container">
+<button class="filter-btn px-6 py-2 rounded-full border border-tertiary bg-tertiary/10 text-tertiary font-label-caps text-label-caps transition-all duration-300" data-filter="all">All Systems</button>
+<button class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-tertiary hover:text-tertiary transition-all font-label-caps text-label-caps duration-300" data-filter="sustainability">Sustainability</button>
+<button class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-tertiary hover:text-tertiary transition-all font-label-caps text-label-caps duration-300" data-filter="blockchain">Blockchain</button>
+<button class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-tertiary hover:text-tertiary transition-all font-label-caps text-label-caps duration-300" data-filter="ai">AI / ML</button>
+<button class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-tertiary hover:text-tertiary transition-all font-label-caps text-label-caps duration-300" data-filter="hardware">Hardware</button>
+</div>
+</section>
+<!-- Projects Grid (Bento Style) -->
+<section class="px-6 md:px-20 pb-stack-xl max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10" id="projects-grid">
+<!-- Project 1: Large Featured -->
+<div class="md:col-span-8 group project-card scroll-reveal bg-surface-container-low border border-outline-variant/30 overflow-hidden relative transition-all duration-500 hover:border-tertiary/50" data-category="sustainability">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A macro shot of a complex circuit board with glowing golden circuitry patterns embedded in a dark, matte charcoal substrate. The lighting is dramatic and low-key, highlighting the precision-engineered textures of microchips and copper traces. The overall aesthetic is one of technical luxury and advanced engineering, reflecting Joy Chepkorir Bett's focus on sophisticated software and architectural minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7CG4wimKrzy91ev4_0ZqLDPVaiKVmG6HutPj33MEGCvx_116DUewP7ola9jtMl3rCqtsXH51ngIZXH43UumxN2c1oJ1f5cAIRZyNEbN4jYbnNNFgKXhKsR2bQYhUf6CvBphEAnWhIGz82kpV0z-5_rLzgP5Ht6dktjC53w2eYf1kvX5Enz60c9CxDYjR82iTbnFjfHiL8-_DDbtVysSuXYjd5kmkKlGeo3UQjOt5jC3cxhpPDoCrP5OyGYJjtHGTm1A1ZKvSfSpA"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="font-code-sm text-code-sm text-tertiary bg-tertiary/10 px-3 py-1 mb-2 inline-block">SUSTAINABILITY</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">CirculaTrace v1.0</h3>
+</div>
+<div class="flex gap-4">
+<a class="material-symbols-outlined text-on-surface-variant hover:text-tertiary transition-colors" href="#">terminal</a>
+<a class="material-symbols-outlined text-on-surface-variant hover:text-tertiary transition-colors" href="#">open_in_new</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<p class="font-label-caps text-label-caps text-tertiary mb-2">PROBLEM</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Fragmented supply chain data making material recovery impossible in electronic manufacturing.</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-tertiary mb-2">SOLUTION</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Hyperledger-based immutable ledger tracking rare earth minerals from extraction to end-of-life recycling.</p>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/20 flex flex-wrap gap-3">
+<span class="font-label-caps text-[10px] border border-outline-variant px-3 py-1 text-on-surface-variant">RUST</span>
+<span class="font-label-caps text-[10px] border border-outline-variant px-3 py-1 text-on-surface-variant">HYPERLEDGER</span>
+<span class="font-label-caps text-[10px] border border-outline-variant px-3 py-1 text-on-surface-variant">NEXT.JS</span>
+</div>
+</div>
+</div>
+<!-- Project 2: Side Small -->
+<div class="md:col-span-4 group project-card scroll-reveal bg-surface-container-low border border-outline-variant/30 overflow-hidden transition-all duration-500 hover:border-tertiary/50" data-category="ai">
+<div class="aspect-square overflow-hidden">
+<img class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A digital visualization of a neural network with nodes glowing in a soft, elegant gold against a deep cosmic void. The lines of connection are thin and precise, resembling high-end architectural drawings. The scene feels vast and cerebral, emphasizing the fusion of artificial intelligence and visionary leadership in a dark-mode tech environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzMHxOcvOv_eKMw9TpS5ckLzhOsW7LlaoWWzgX_TU2iPI12eebE-G9ptj_pMw4H3AVBMsxTLCxxxpDdV6o16oqto4BR41SjD96iAhzxHVb36XRjNYKkothTLw18eSu2W-JJkhtOw_7IsHwM8oZanacaMAV5sgn-uGLfyFtsqftejNAx0c011K3XkyiESlX0L_eNjMTG3UwM1PFhie2QdSFFKZ4Eube2Kx1q9w8UvNLsyb_dOjGN4AAQtePc2gopmePGYK3C6wZwjI"/>
+</div>
+<div class="p-6">
+<span class="font-code-sm text-code-sm text-on-primary-container bg-primary-container px-2 py-1 mb-2 inline-block">AI / ML</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Neural Grid Optimizer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">AI-driven load balancing for decentralised renewable energy grids in sub-Saharan regions.</p>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[10px] text-tertiary">OUTCOME:</span>
+<span class="font-label-caps text-[10px] text-on-surface">34% Efficiency Increase</span>
+</div>
+</div>
+</div>
+<!-- Project 3: Vertical Tall -->
+<div class="md:col-span-4 md:row-span-2 group project-card scroll-reveal bg-surface-container-low border border-outline-variant/30 overflow-hidden flex flex-col transition-all duration-500 hover:border-tertiary/50" data-category="hardware">
+<div class="flex-grow overflow-hidden">
+<img class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="An editorial style photo of a modern, sustainable architectural structure made of recycled industrial glass and steel. The lighting is golden hour, casting long, dramatic shadows and reflecting warm tones on the polished surfaces. The composition follows a strict vertical axis, creating a sense of scale and structural integrity common in premium engineering portfolios." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh4mxqYgy8UrAT98OFX1etKHy96UJRJIznVb8K85R1tn0BtrbTkuVut58R1g_EqzoOYegs_zYHo8nu_y-CZ4eiJKY3UGZ-1fYGS5Gg3Ef4dywbUGuPDRooprlQ9-JbStqXl4-eZp5cZIZKYnG-w4YeEhjDOib4mvgAMcjU_9ev7bvAo05Le53dZZyC_S1TrjiiavjCFjK2ZDLFtGsleJMN_PaDdd7LZ1YZ2AvTIIP7c9e0pcGHHHkZse-v5qdyTHzmEyADcesrFng"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-lg text-headline-lg-mobile text-on-surface mb-4">Ark_OS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">A custom kernel for low-power IoT devices designed for perpetual operation in extreme environmental conditions.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+<span class="font-label-caps text-[11px] text-on-surface">99.99% Uptime Verified</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+<span class="font-label-caps text-[11px] text-on-surface">ISO-14001 Compliant</span>
+</div>
+</div>
+<button class="w-full mt-8 border border-outline-variant py-4 font-label-caps text-label-caps text-on-surface hover:bg-tertiary hover:text-on-tertiary hover:border-tertiary transition-all">READ CASE STUDY</button>
+</div>
+</div>
+<!-- Project 4: Horizontal -->
+<div class="md:col-span-8 group project-card scroll-reveal bg-surface-container-low border border-outline-variant/30 overflow-hidden flex flex-col md:flex-row transition-all duration-500 hover:border-tertiary/50" data-category="sustainability">
+<div class="md:w-1/2 aspect-[4/3] md:aspect-auto overflow-hidden">
+<img class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A clean, minimalist dashboard UI displayed on a high-resolution screen in a dimly lit, professional studio. The interface features sophisticated data visualizations, elegant typography, and gold accent colors. The depth of field is shallow, focusing on the precision of the technical charts, emphasizing the software engineering expertise of Joy Chepkorir Bett." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_6Jwnt_sXEabqxAUk_Au-KMq3wGaG_IDv6mWJXhKxU2yyh0BiRdolftPEu5-TWg5b25TaeYKZZdKI1Lc2DnYhEge1ERV8kl9QDSe4nzwa0qSBOvkJ7PUu0fP0sPO0PCzrkpI912Iqux3tQ3UOAXU1qmnQ1XiwRMJrGzI3SVhI0vd5bpXtpHHlY7XOYObvHKnvrtlnLn-E6LgX3gkn3WNXBuS3guaSL8OXAG1aZ7QhC2oB7XZWYLykC75Afek2C0OND2auV6QAcaw"/>
+</div>
+<div class="p-8 md:w-1/2 flex flex-col justify-center">
+<span class="font-code-sm text-code-sm text-on-secondary-fixed-variant mb-2">FINTECH</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-4">EthiCap Dashboard</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Visualizing ESG metrics for venture portfolios with real-time API integrations from global environmental sensors.</p>
+<div class="flex gap-4">
+<div class="h-10 w-10 rounded-full border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">terminal</span>
+</div>
+<div class="h-10 w-10 rounded-full border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">link</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 5: Square -->
+<div class="md:col-span-4 group project-card scroll-reveal bg-surface-container-low border border-outline-variant/30 overflow-hidden transition-all duration-500 hover:border-tertiary/50" data-category="hardware">
+<div class="aspect-video overflow-hidden">
+<img class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A sleek, metallic robotic arm performing a precise task in a laboratory environment characterized by architectural minimalism. The setting is dominated by deep charcoal voids and sharp ivory lines. Soft gold reflections play on the robot's surface, suggesting high-performance tech that is both functional and aesthetically refined." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRsD1fv1tEC0wtqyNSfPuUjFvup-NzI83id8JDXgx4tGg9YWFr3umiZj7KdJpyTaxpbAPSpDisAee5NyhCi37qH2SsPAL-H8AOSmEYF963KrKacQ4lSuLIqML8dtk5U-DqYwlR-nbtxetBu5VEdK2iicSRbZ7JrCR0oWnyQjMi0xVc9wRGFsdeXzXkZ166gnvh1y5DLGbsp1qieKY-WBhhJ6GetRmAMBLaeWn8ttuBw1g1dblw5WtHpRFA9Qo41XXtYtAmr2M43CY"/>
+</div>
+<div class="p-6">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Kinetic Recycler</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Computer vision system for high-speed sorting of polymer composites.</p>
+<div class="mt-4 flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-label-caps text-[10px] text-on-surface">PYTHON / OPENCV / C++</span>
+</div>
+</div>
+</div>
+<!-- Project 6: Square -->
+<div class="md:col-span-4 group project-card scroll-reveal bg-surface-container-low border border-outline-variant/30 overflow-hidden transition-all duration-500 hover:border-tertiary/50" data-category="blockchain">
+<div class="aspect-video overflow-hidden">
+<img class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A stylized cryptographic hash represented as a series of interlocking geometric cubes in a glass-morphic style. The cubes are transparent with glowing gold edges, suspended in a dark, infinite space. This visual captures the essence of technical depth and blockchain security through a modern editorial lens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8I0BNn4NWbF9Od2YoK_r61XaC85hHc7eK86c1uBTuvrBdZ5JO2WXC5iPm_nYQh7RFQKbU-81SNKIYIQaZeeEzdQdodZfYp2DOVSmTmQvMd4Aei_BOeWyqfjQlEi0NoaQCKJJl8qKt-y1lYivTd5BQbsKhXJlBMynqMH1oS4VOX1Wd8HDI907qn1f3VNAw5LRJ9cgSqXxj7XkUsDKs7xnDBDzEqaYdgyOBrlTMVQ3OpzcNBHA1hlwbYmO_Sc5byCw5gi77IStakL0"/>
+</div>
+<div class="p-6">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">SecuraNodes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Automated deployment scripts for hardened validator nodes on PoS networks.</p>
+<div class="mt-4 flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-on-secondary-container"></div>
+<span class="font-label-caps text-[10px] text-on-surface">DOCKER / TERRAFORM / GO</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-6 md:px-20 py-stack-xl max-w-container-max mx-auto text-center relative z-10">
+<div class="max-w-3xl mx-auto py-20 border-y border-outline-variant/20">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">Have a visionary project in mind?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">I am always open to discussing technical architecture, circular systems, or high-impact engineering collaborations.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-tertiary px-10 py-5 font-label-caps text-label-caps text-on-tertiary hover:brightness-110 transition-all hover:scale-105">START A CONVERSATION</button>
+<button class="border border-outline-variant px-10 py-5 font-label-caps text-label-caps text-on-surface hover:bg-surface-container-high transition-all hover:scale-105">DOWNLOAD CV (PDF)</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-6 md:px-20 py-stack-xl flex flex-col md:flex-row justify-between items-start border-t border-outline-variant bg-surface-container-lowest relative z-20">
+<div class="mb-10 md:mb-0">
+<div class="font-headline-lg text-headline-lg-mobile text-primary-fixed-dim opacity-50 mb-4">JOY CHEPKORIR BETT.</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant max-w-xs">BUILDING DIGITAL ARKS FOR A SUSTAINABLE FUTURE.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-secondary mb-2">NAV</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-fixed transition-all duration-300 hover:translate-x-1" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-fixed transition-all duration-300 hover:translate-x-1" href="#">Projects</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-fixed transition-all duration-300 hover:translate-x-1" href="#">About</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-secondary mb-2">SOCIAL</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-fixed transition-all duration-300 hover:translate-x-1" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-fixed transition-all duration-300 hover:translate-x-1" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-fixed transition-all duration-300 hover:translate-x-1" href="#">X / Twitter</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-secondary mb-2">LEGAL</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-fixed transition-all duration-300 hover:translate-x-1" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-fixed transition-all duration-300 hover:translate-x-1" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-secondary mb-2">CONTACT</span>
+<span class="font-body-md text-body-md text-on-surface-variant">hello@joybett.dev</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Nairobi, KE</span>
+</div>
+</div>
+<div class="w-full mt-20 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between gap-4">
+<p class="font-label-caps text-[10px] text-on-surface-variant">© 2024 JOY CHEPKORIR BETT. ALL RIGHTS RESERVED.</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant tracking-widest">DESIGNED WITH ARCHITECTURAL PRECISION</p>
+</div>
+</footer>
+<script>
+    // Project Filtering Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filterValue = btn.getAttribute('data-filter');
+
+            // Update UI buttons
+            filterButtons.forEach(b => {
+                b.classList.remove('bg-tertiary/10', 'text-tertiary', 'border-tertiary');
+                b.classList.add('border-outline-variant', 'text-on-surface-variant');
+            });
+            btn.classList.add('bg-tertiary/10', 'text-tertiary', 'border-tertiary');
+            btn.classList.remove('border-outline-variant', 'text-on-surface-variant');
+
+            // Filter projects with animation
+            projectCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }, 300);
+            });
+        });
+    });
+
+    // Scroll Reveal Logic
+    const revealOnScroll = () => {
+        const reveals = document.querySelectorAll('.scroll-reveal');
+        reveals.forEach(reveal => {
+            const windowHeight = window.innerHeight;
+            const revealTop = reveal.getBoundingClientRect().top;
+            const revealPoint = 150;
+
+            if (revealTop < windowHeight - revealPoint) {
+                reveal.classList.add('visible');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Parallax-ish Scroll Effect for Project Images
+    window.addEventListener('scroll', () => {
+        const images = document.querySelectorAll('.project-image');
+        images.forEach(img => {
+            const speed = 0.05;
+            const rect = img.getBoundingClientRect();
+            const visible = rect.top < window.innerHeight && rect.bottom > 0;
+            if (visible) {
+                const offset = (window.innerHeight / 2 - rect.top) * speed;
+                img.style.transform = `scale(1.1) translateY(${offset}px)`;
+            }
+        });
+    });
+
+    // Ambient background animation
+    const orbs = document.querySelectorAll('.ambient-orb');
+    let mouseX = 0;
+    let mouseY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        orbs.forEach((orb, index) => {
+            const factor = (index + 1) * 0.02;
+            const x = (mouseX - window.innerWidth / 2) * factor;
+            const y = (mouseY - window.innerHeight / 2) * factor;
+            orb.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    });
+</script>
+</body></html>

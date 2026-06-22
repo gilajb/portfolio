@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | JOY CHEPKORIR BETT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&amp;family=Literata:opsz,wght@7..72,400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0D0D0D;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(26, 26, 26, 0.4);
+            border: 1px solid rgba(46, 46, 46, 0.5);
+        }
+        .input-underline {
+            border: none;
+            border-bottom: 1px solid #444748;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .input-underline:focus {
+            outline: none;
+            border-bottom: 1px solid #e9c349;
+            box-shadow: 0 4px 12px -4px rgba(233, 195, 73, 0.2);
+        }
+
+        /* Motion Enhancements */
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+        .ambient-blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(200, 198, 197, 0.05) 0%, rgba(20, 19, 19, 0) 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-field-entrance {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.5s ease-out;
+        }
+        .form-field-entrance.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .magnetic-button {
+            transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ffb4ab",
+                        "surface-tint": "#c8c6c5",
+                        "tertiary-fixed": "#ffe088",
+                        "on-background": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "on-secondary-container": "#b7b5b0",
+                        "outline-variant": "#444748",
+                        "tertiary": "#e9c349",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#141313",
+                        "on-secondary-fixed-variant": "#474743",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#313030",
+                        "primary": "#c8c6c5",
+                        "on-secondary-fixed": "#1c1c18",
+                        "on-tertiary-container": "#4f3e00",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "secondary-container": "#474743",
+                        "tertiary-container": "#cca730",
+                        "inverse-primary": "#5f5e5e",
+                        "on-error": "#690005",
+                        "surface": "#141313",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface-variant": "#c4c7c7",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-container": "#848282",
+                        "secondary": "#c9c6c1",
+                        "on-tertiary": "#3c2f00",
+                        "error-container": "#93000a",
+                        "on-primary": "#313030",
+                        "secondary-fixed": "#e5e2dc",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed-dim": "#c9c6c1",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed": "#241a00",
+                        "background": "#141313",
+                        "surface-variant": "#353434",
+                        "primary-container": "#1a1a1a",
+                        "outline": "#8e9192",
+                        "surface-container-highest": "#353434",
+                        "surface-container-high": "#2b2a2a",
+                        "on-secondary": "#31312d",
+                        "on-surface": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "40px",
+                        "stack-sm": "16px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "stack-xl": "120px",
+                        "stack-lg": "80px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Literata"],
+                        "body-md": ["Hanken Grotesk"],
+                        "code-sm": ["JetBrains Mono"],
+                        "display-xl-mobile": ["Literata"],
+                        "display-xl": ["Literata"],
+                        "title-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Literata"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "code-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-xl": ["80px", {"lineHeight": "92px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "title-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-tertiary selection:text-on-tertiary">
+<!-- Ambient Background Blobs -->
+<div class="ambient-blob top-0 -left-20"></div>
+<div class="ambient-blob bottom-0 right-0" style="animation-delay: -5s; width: 600px; height: 600px;"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-20 py-6 max-w-container-max mx-auto bg-surface/10 backdrop-blur-[20px] border-b border-outline-variant/20">
+<div class="font-label-caps text-label-caps font-bold tracking-widest text-on-surface uppercase">JOY CHEPKORIR BETT</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-tertiary border-b-2 border-tertiary pb-1" href="#">Contact</a>
+</div>
+<button class="font-label-caps text-label-caps bg-primary text-on-primary px-6 py-3 rounded-none hover:bg-tertiary transition-all duration-300 active:scale-95">
+        Work With Me
+    </button>
+</nav>
+<main class="pt-32 pb-stack-xl relative z-10">
+<!-- Hero Section -->
+<section class="px-6 md:px-20 mb-stack-lg">
+<div class="max-w-4xl reveal-on-scroll">
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest uppercase mb-4 block">Initialization</span>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface mb-8">
+                Let's Build the <span class="italic text-primary-fixed-dim">Future</span> of Code.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Whether you're looking for a technical leader to steer a complex architecture or a developer to refine a vision, my terminal is always open.
+            </p>
+</div>
+</section>
+<!-- Main Grid -->
+<section class="px-6 md:px-20 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Contact Form (Bento Large) -->
+<div class="lg:col-span-7 glass-panel p-8 md:p-12 relative overflow-hidden reveal-on-scroll" style="transition-delay: 0.1s;">
+<div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-9xl">terminal</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-stack-md">Secure Transmission</h2>
+<form class="space-y-10" id="contact-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="flex flex-col gap-2 form-field-entrance" style="transition-delay: 0.2s;">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase transition-colors duration-300">Full Name</label>
+<input class="font-body-md text-body-md input-underline py-2 text-on-surface" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2 form-field-entrance" style="transition-delay: 0.3s;">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase transition-colors duration-300">Electronic Mail</label>
+<input class="font-body-md text-body-md input-underline py-2 text-on-surface" placeholder="john@example.com" required="" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2 form-field-entrance" style="transition-delay: 0.4s;">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase transition-colors duration-300">Subject</label>
+<select class="font-body-md text-body-md input-underline py-2 text-on-surface appearance-none">
+<option class="bg-surface-container">New Project Collaboration</option>
+<option class="bg-surface-container">Speaking Engagement</option>
+<option class="bg-surface-container">Technical Consulting</option>
+<option class="bg-surface-container">Other Inquiry</option>
+</select>
+</div>
+<div class="flex flex-col gap-2 form-field-entrance" style="transition-delay: 0.5s;">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase transition-colors duration-300">Message</label>
+<textarea class="font-body-md text-body-md input-underline py-2 text-on-surface resize-none" placeholder="Describe the architectural challenge..." required="" rows="4"></textarea>
+</div>
+<div class="inline-block">
+<button class="magnetic-button group flex items-center gap-4 bg-tertiary text-on-tertiary px-10 py-5 font-label-caps text-label-caps hover:bg-tertiary-fixed transition-all duration-300 shadow-xl shadow-tertiary/5" id="submit-btn" type="submit">
+                        ESTABLISH CONNECTION
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Contact Info & CTA (Bento Sidebar) -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<!-- Quick Info Card -->
+<div class="bg-surface-container p-8 border border-outline-variant/30 reveal-on-scroll" style="transition-delay: 0.2s;">
+<h3 class="font-title-md text-title-md mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">database</span>
+                    Core Directories
+                </h3>
+<div class="space-y-6">
+<a class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-variant transition-all duration-300 border border-outline-variant/10" href="mailto:hello@joybett.dev">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="font-code-sm text-code-sm">hello@joybett.dev</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-variant transition-all duration-300 border border-outline-variant/10" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">link</span>
+<span class="font-code-sm text-code-sm">linkedin.com/in/joybett</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-variant transition-all duration-300 border border-outline-variant/10" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<span class="font-code-sm text-code-sm">github.com/joybett</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Resume Download Card -->
+<div class="bg-surface-container-highest p-8 flex flex-col justify-between group cursor-pointer border border-tertiary/20 hover:border-tertiary transition-all duration-500 reveal-on-scroll" style="transition-delay: 0.3s;">
+<div>
+<h3 class="font-title-md text-title-md mb-2">Technical Dossier</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Comprehensive record of engineering expertise and leadership history.</p>
+</div>
+<button class="w-full border border-on-surface py-4 flex items-center justify-center gap-3 font-label-caps text-label-caps hover:bg-on-surface hover:text-surface transition-all duration-300">
+<span class="material-symbols-outlined">download</span>
+                    Download Resume (PDF)
+                </button>
+</div>
+<!-- Map/Location Placeholder -->
+<div class="relative h-48 overflow-hidden group reveal-on-scroll" style="transition-delay: 0.4s;">
+<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 ease-out" data-alt="A sophisticated dark-themed abstract map of a global tech hub city." id="parallax-map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtsx4mqblkLOqIjdTcDcwP571wfLSG--T0hS1aBR86k0fjhk7HAhdEHY2z_D_9L0i1eHo3wuxT9RzetrYRWPlU36eFcv0eoZzu1-sn5KIKNS6gFqlRXTMQxarODWiPL3jiaSDicXoQdT6712S-dNOLPyqh-rrZt3MvaZQJRWG3Ya-VBKcIJh08akPlraT8qsrZEoY0IJfss05IoYJpauTI_14FaeTBb9g3a_LN56yBwkM1du-3kosuZwch5OGobVvZndzYDiyWT7Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<p class="font-label-caps text-label-caps text-tertiary">Current Base:</p>
+<p class="font-title-md text-title-md">Nairobi // Remote</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Collaboration CTA -->
+<section class="mt-stack-xl px-6 md:px-20 text-center">
+<div class="max-w-5xl mx-auto border-y border-outline-variant/20 py-stack-lg reveal-on-scroll">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">
+                Ready to scale your next <span class="text-tertiary">Digital Ark</span>?
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                I am currently accepting select projects for Q3 2024. Let's discuss how we can merge performance with premium design.
+            </p>
+<div class="flex flex-col md:flex-row justify-center items-center gap-6">
+<button class="bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps tracking-widest hover:bg-tertiary transition-all duration-300 w-full md:w-auto hover:shadow-lg hover:shadow-tertiary/20">
+                    SCHEDULE A CALL
+                </button>
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-50 hidden md:block">OR</span>
+<a class="text-on-surface font-label-caps text-label-caps border-b border-on-surface pb-1 hover:text-tertiary hover:border-tertiary transition-all" href="mailto:hello@joybett.dev">
+                    SEND A DIRECT LOG
+                </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-6 md:px-20 py-stack-xl flex flex-col md:flex-row justify-between items-start border-t border-outline-variant bg-surface-container-lowest relative z-10">
+<div class="mb-10 md:mb-0">
+<div class="font-headline-lg text-headline-lg-mobile text-primary-fixed-dim opacity-50 mb-4">JOY CHEPKORIR BETT</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">© 2024 JOY CHEPKORIR BETT. BUILDING DIGITAL ARKS.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 md:gap-16">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-tertiary opacity-70">Social</span>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">GitHub</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-tertiary opacity-70">Legal</span>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">Privacy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-fixed hover:translate-x-1 transition-all duration-300" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+    // Reveal on scroll logic
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                
+                // If it's the form, trigger its field animations
+                if (entry.target.classList.contains('glass-panel')) {
+                    entry.target.querySelectorAll('.form-field-entrance').forEach(field => {
+                        field.classList.add('active');
+                    });
+                }
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+
+    // Magnetic Button Effect
+    const btn = document.getElementById('submit-btn');
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = `translate(0, 0)`;
+    });
+
+    // Parallax Map Effect
+    window.addEventListener('scroll', () => {
+        const map = document.getElementById('parallax-map');
+        const scroll = window.pageYOffset;
+        if (map) {
+            map.style.transform = `translateY(${scroll * 0.05}px) scale(1.1)`;
+        }
+    });
+
+    // Micro-interaction for form focus
+    document.querySelectorAll('input, textarea, select').forEach(el => {
+        el.addEventListener('focus', () => {
+            const label = el.parentElement.querySelector('label');
+            if (label) label.style.color = '#e9c349';
+        });
+        el.addEventListener('blur', () => {
+            const label = el.parentElement.querySelector('label');
+            if (label) label.style.color = '';
+        });
+    });
+
+    // Simple form handling simulation
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = e.target.querySelector('button');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'SYNCHRONIZING...';
+        submitBtn.classList.add('opacity-50');
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            submitBtn.innerHTML = 'MESSAGE TRANSMITTED';
+            submitBtn.classList.remove('bg-tertiary');
+            submitBtn.classList.add('bg-green-600');
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('bg-green-600', 'opacity-50');
+                submitBtn.classList.add('bg-tertiary');
+                submitBtn.disabled = false;
+                e.target.reset();
+            }, 3000);
+        }, 1500);
+    });
+</script>
+</body></html>
