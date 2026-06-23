@@ -108,13 +108,8 @@ export default function ProjectCard({ project, style = {}, delay = "0s" }) {
 
         {/* Problem / Solution two-column layout */}
         {hasProblemSolution ? (
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 24,
-              marginBottom: 20,
-            }}
+          <div className="problem-solution-grid" 
+            style={{ marginBottom: 20 }}
           >
             {[
               { label: "PROBLEM", text: problem },

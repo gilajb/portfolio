@@ -140,7 +140,7 @@ export default function HomePage({ setPage }) {
 
         {/* Right decorative image */}
         <div
-          className="hide-mobile reveal"
+          className="hide-mobile reveal hero-decorative-img"
           style={{
             position: "absolute",
             right: 0,
@@ -293,7 +293,7 @@ export default function HomePage({ setPage }) {
           onMouseLeave={deactivateGlow}
         >
           {/* Large card — col-span 8 */}
-          <div style={{ gridColumn: "span 8" }}>
+          <div className="col-span-8">
             <ProjectCard
               project={featuredProjects[0]}
               delay="0.1s"
@@ -302,7 +302,7 @@ export default function HomePage({ setPage }) {
           </div>
 
           {/* Small card — col-span 4 */}
-          <div style={{ gridColumn: "span 4" }}>
+          <div className="col-span-4">
             <ProjectCard
               project={featuredProjects[1]}
               delay="0.3s"
@@ -312,7 +312,7 @@ export default function HomePage({ setPage }) {
 
           {/* Wide card — col-span 12 */}
           <div
-            className="project-card arch-grid reveal"
+            className="project-card arch-grid reveal col-span-12"
             style={{
               gridColumn: "span 12",
               background: "var(--surface-container-low)",

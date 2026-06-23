@@ -509,3 +509,49 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ─── Responsive Bento Grid ──────────────────────────── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.col-span-12 { grid-column: span 12; }
+.col-span-8  { grid-column: span 8; }
+.col-span-6  { grid-column: span 6; }
+.col-span-4  { grid-column: span 4; }
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .col-span-12,
+  .col-span-8,
+  .col-span-6,
+  .col-span-4 {
+    grid-column: span 1;
+  }
+}
+
+/* Problem/Solution two-column layout inside cards */
+.problem-solution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .problem-solution-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Decorative hero image - constrain on mobile */
+@media (max-width: 768px) {
+  .hero-decorative-img {
+    display: none;
+  }
+}

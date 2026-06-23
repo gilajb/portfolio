@@ -15,14 +15,14 @@ const FILTERS = [
  * Maps a project's `size` field to a CSS gridColumn value.
  * Breakpoint note: on mobile the grid is 1 column (all cards full width).
  */
-function colSpan(size) {
+function colSpanClass(size) {
   switch (size) {
-    case "large":  return "span 8";
-    case "small":  return "span 4";
-    case "tall":   return "span 4";
-    case "wide":   return "span 8";
-    case "medium": return "span 6";
-    default:       return "span 6";
+    case "large":  return "col-span-8";
+    case "small":  return "col-span-4";
+    case "tall":   return "col-span-4";
+    case "wide":   return "col-span-8";
+    case "medium": return "col-span-6";
+    default:       return "col-span-6";
   }
 }
 
@@ -204,17 +204,11 @@ export default function ProjectsPage() {
             No projects in this category yet.
           </div>
         ) : (
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(12, 1fr)",
-              gap: 24,
-            }}
-          >
+          <div className="bento-grid">
             {visible.map((project, i) => (
               <div
                 key={project.id}
-                style={{ gridColumn: colSpan(project.size) }}
+                className={colSpanClass(project.size)}
               >
                 <ProjectCard
                   project={project}
