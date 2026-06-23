@@ -7,7 +7,7 @@ export const PROJECTS = [
   {
     id: 1,
     category: "femtech",
-    image: "public/SisterCircle.jpg",
+    image: "/SisterCircle.jpg",
     badge: "WOMEN HEALTH & EMPOWERMENT / AI in Healthcare",
     title: "SisterCircle+",
     description:
@@ -24,7 +24,7 @@ export const PROJECTS = [
   {
     id: 2,
     category: "climatetech",
-    image: "public/WasteLoop.png",
+    image: "/WasteLoop.png",
     badge: "ClimateTech",
     title: "WasteLoop",
     description:
@@ -42,7 +42,7 @@ export const PROJECTS = [
   {
     id: 3,
     category: "african culture",
-    image: "public/576.39.png",
+    image: "/576.39.png",
     badge: "African Culture",
     title: "576.39 Portfolio",
     description:
@@ -58,7 +58,7 @@ export const PROJECTS = [
   {
     id: 4,
     category: "healthtech",
-    image: "public/JamiiAfya.png",
+    image: "/JamiiAfya.png",
     badge: "FINTECH/HEALTHTECH",
     title: "JamiiAfya",
     description:
