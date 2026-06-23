@@ -135,9 +135,8 @@ export default function ProjectsPage() {
 
           {/* Meta (desktop) */}
           <div
-            style={{ gridColumn: "span 4" }}
+            style={{ gridColumn: "span 4", transitionDelay: "0.2s" }}
             className="reveal hide-mobile"
-            style={{ transitionDelay: "0.2s" }}
           >
             <div
               style={{
